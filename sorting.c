@@ -43,3 +43,22 @@ void Insertion(int n,int arr[])
         arr[j + 1] = kys;
     }
 }
+//Function Definition for Selection Sort
+void Selection( int n,int arr[])
+{
+    int i, j, mindx;
+
+
+    for (i = 0; i < n-1; i++)
+    {
+        // Finding the index of min element in unsorted part
+        mindx = i;
+        for (j = i+1; j < n; j++)
+          if (arr[j] < arr[mindx])
+            mindx = j;
+
+        // Swap the found minimum element with the first element of unsorted part
+        swap(&arr[mindx], &arr[i]);
+
+    }
+}
