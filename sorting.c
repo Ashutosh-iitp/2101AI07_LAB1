@@ -170,3 +170,55 @@ void Quick(int array[], int l, int r) {
     Quick(array, p + 1, r);
   }
 }
+int main()
+{
+    int n,option;
+    printf("Enter The size of your arr of numbers : ");
+    scanf("%d",&n);
+
+    int arr[n];
+    printf("Enter the numbers in your arr :\n");//Initialising Array of Numbers
+
+    for(int i=0;i<n;i++)
+        {
+       scanf("%d",&arr[i]);
+        }
+
+    printf("Enter the Number corresponding to the sorting you want to perform:\n 1 for Bubble \n 2 for Insertion \n 3 for Selection \n 4 for Merge\n 5 for Quick\n===================\n ");
+    scanf("%d",&option);
+
+    printf("\nInitial arr is :\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+
+    }
+    printf("\n");
+
+
+    switch(option){
+        case 1: Bubble(n,arr);
+            break;
+        case 2: Insertion(n,arr);
+            break;
+        case 3: Selection(n,arr);
+            break;
+        case 4: Merge(arr,0,n-1);
+            break;
+        case 5: Quick(arr,0,n-1);
+             break;
+
+        default: printf("\n Error  ");
+    }
+
+
+
+    printf("\nThe Sorted arr is:\n");
+     for (int i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+
+    }
+    return 0;
+
+}
